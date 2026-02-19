@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Student Result Calculator</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h2>🎓 Student Result Calculator</h2>
+
+    <div class="container">
+      <!-- Personal Info -->
+      <div class="form-section" style="padding-right: 45px">
+        <h3>Student Info</h3>
+        <input type="text" id="fname" placeholder="First Name" required />
+        <input type="text" id="lname" placeholder="Last Name" required />
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="tel" id="phone" placeholder="Phone Number" required />
+      </div>
+
+      <!-- Marks -->
+      <div class="form-section" style="padding-right: 45px">
+        <h3>Enter Marks (Out of 100)</h3>
+        <input
+          type="number"
+          id="math"
+          placeholder="Math Marks"
+          min="0"
+          max="0"
+          required
+        />
+        <input
+          type="number"
+          id="science"
+          placeholder="Science Marks"
+          min="0"
+          max="0"
+          required
+        />
+        <input
+          type="number"
+          id="coding"
+          placeholder="Coding Marks"
+          min="0"
+          max="0"
+          required
+        />
+      </div>
+    </div>
+
+    <button onclick="calculateResult()">Show Result</button>
+
+    <!-- Result Display -->
+    <div id="result"></div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
