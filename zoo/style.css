@@ -1,0 +1,100 @@
+body {
+  background: orange;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+body {
+    background-image: url('https://www.shutterstock.com/image-photo/amazons-breath-aerial-view-showing-600nw-2400048213.jpg'); 
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center center;
+    background-attachment: fixed; 
+    background-color: #f0f0f0; 
+}
+h1 {
+  font-size: 50px;
+  margin: 20px;
+      
+}
+.intro {
+  max-width: 800px;
+  margin: auto;
+  font-size: 20px;
+  line-height: 1.6;
+  background: #fff8dc;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+}
+.card {
+  width: 200px;
+  height: 280px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s;
+  padding: 10px;
+}
+.card:hover {
+  transform: scale(1).5;
+}
+.card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-top: 10px;
+  object-fit: cover;
+}
+.card p {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 8px 0 4px 0;
+}
+.facts {
+  font-size: 14px;
+  color: #333;
+  text-align: left;
+  padding: 0 10px;
+}
+.image-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+.image-list li {
+  padding-left: 30px; 
+  position:relative; 
+}
+.image-list li::before {
+  content: ''; /* This is required for the ::before pseudo-element to show up */
+  background-image: url('https://cdn-icons-png.freepik.com/256/9282/9282720.png?semt=ais_white_label'); /* Your image URL */
+  background-size: cover; /* Ensures the image fits the space */ 
+  /* Positioning and size of the image */
+  position: absolute;
+  left: 0;
+  top: 5px; /* Adjust vertical alignment */
+  width: 20px; /* Width of your bullet */
+  height: 20px; /* Height of your bullet */
+}
+.icon-list {
+  list-style: none;
+  padding-left: 0px;
+}
+.icon-list li::before {
+  font-family: "Font Awesome 6 Free"; /* Specify the icon font */
+  font-weight: 900; /* Use the 'solid' style of icons */
+  content: '\f015'; /* The Unicode for the checkmark icon */
+  
+  /* Spacing and color */
+  margin-right: 10px;
+  color: #121413; /* A nice green color */
+}

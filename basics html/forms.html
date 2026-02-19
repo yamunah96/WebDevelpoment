@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Form Project</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color:#eef6ff;
+        }
+
+        .main{
+            display: flex;
+            width:80%;
+            margin:auto;
+            margin-top:30px;
+        }
+
+        .box{
+            width:50%;
+            background:white;
+            padding:20px;
+            margin:10px;
+            border-radius:10px;
+        }
+
+        input, select{
+            width:100%;
+            padding:8px;
+            margin-top:5px;
+            margin-bottom:10px;
+        }
+
+        button{
+            padding:10px 15px;
+            background:green;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        /* Color Preview Box */
+        .preview{
+            width:100px;
+            height:100px;
+            border:1px solid black;
+            margin-top:10px;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            margin-top:15px;
+        }
+
+        th, td{
+            border:1px solid black;
+            padding:5px;
+            text-align:center;
+        }
+
+        h2{
+            text-align:center;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="main">
+
+<!---------------- Left Form ------------------>
+<div class="box">
+    <h2>Student Form</h2>
+
+    <label>Student Name</label>
+    <input type="text" id="name" oninput="showData()">
+
+    <label>Date of Birth</label>
+    <input type="date" id="dob" oninput="showData()">
+
+    <label>Hobby</label>
+    <input type="text" id="hobby" oninput="showData()">
+
+    <label>Favorite Color</label>
+    <select id="color" onchange="showData()">
+        <option value="">Select</option>
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+        <option value="yellow">Yellow</option>
+        <option value="purple">Purple</option>
+    </select>
+
+    <button onclick="saveData()">Submit</button>
+</div>
+
+
+<!---------------- Right Display ------------------>
+<div class="box">
+    <h2>Live Preview</h2>
+
+    <p><b>Name:</b> <span id="showName"></span></p>
+    <p><b>DOB:</b> <span id="showDOB"></span></p>
+    <p><b>Hobby:</b> <span id="showHobby"></span></p>
+    <p><b>Color:</b> <span id="showColor"></span></p>
+
+    <!-- Color Preview -->
+    <div class="preview" id="colorBox"></div>
+</div>
+
+</div>
+
+
+<!---------------- Data Table ------------------>
+<div class="box" style="width:80%; margin:auto;">
+    <h2>Saved Student List</h2>
+
+    <table id="dataTable">
+        <tr>
+            <th>Name</th>
+            <th>DOB</th>
+            <th>Hobby</th>
+            <th>Favorite Color</th>
+        </tr>
+    </table>
+</div>
+
+
+<script>
+function showData(){
+    let name = document.getElementById("name").value;
+    let dob = document.getElementById("dob").value;
+    let hobby = document.getElementById("hobby").value;
+    let color = document.getElementById("color").value;
+
+    document.getElementById("showName").innerText = name;
+    document.getElementById("showDOB").innerText = dob;
+    document.getElementById("showHobby").innerText = hobby;
+    document.getElementById("showColor").innerText = color;
+
+    // Set color preview box
+    document.getElementById("colorBox").style.backgroundColor = color;
+}
+
+
+function saveData(){
+
+    let name = document.getElementById("name").value;
+    let dob = document.getElementById("dob").value;
+    let hobby = document.getElementById("hobby").value;
+    let color = document.getElementById("color").value;
+
+    // Add new row into table
+    let table = document.getElementById("dataTable");
+    let row = table.insertRow();
+
+    row.insertCell(0).innerHTML = name;
+    row.insertCell(1).innerHTML = dob;
+    row.insertCell(2).innerHTML = hobby;
+    row.insertCell(3).innerHTML = color;
+
+    // Clear inputs
+    document.getElementById("name").value = "";
+    document.getElementById("dob").value = "";
+    document.getElementById("hobby").value = "";
+    document.getElementById("color").value = "";
+    document.getElementById("colorBox").style.backgroundColor = ""; 
+}
+</script>
+
+</body>
+</html>

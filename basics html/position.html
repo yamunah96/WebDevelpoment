@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Position Examples</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    .box {
+      width: 120px;
+      height: 80px;
+      margin: 15px;
+      padding: 10px;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      line-height: 80px;
+    }
+
+    /* 1. Static */
+    .static {
+      background: steelblue;
+      position: static; /* default */
+    }
+
+    /* 2. Relative */
+    .relative {
+      background: orange;
+      position: relative;
+      top: 20px;
+      left: 30px;
+    }
+
+    /* 3. Absolute inside a parent */
+    .parent {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      background: lightgray;
+      margin-top: 30px;
+    }
+    .absolute {
+      background: tomato;
+      position: absolute;
+      top: 40px;
+      left: 40px;
+    }
+
+    /* 4. Fixed */
+    .fixed {
+      background: green;
+      position: fixed;
+      top: 10px;
+      right: 10px;
+    }
+
+    /* 5. Sticky */
+    .sticky {
+      background: purple;
+      position: sticky;
+      top: 0;
+    }
+
+    .spacer {
+      height: 1200px; /* for scrolling */
+    }
+  </style>
+</head>
+<body>
+
+  <h2>1. Static</h2>
+  <div class="box static">Static</div>
+
+  <h2>2. Relative</h2>
+  <div class="box relative">Relative</div>
+
+  <h2>3. Absolute (inside parent)</h2>
+  <div class="parent">
+    Parent (gray box)
+    <div class="box absolute">Absolute</div>
+  </div>
+
+  <h2>4. Fixed (top-right corner)</h2>
+  <div class="box fixed">Fixed</div>
+
+  <h2>5. Sticky</h2>
+  <div class="box sticky">Sticky</div>
+
+  <div class="spacer">
+    Scroll down to see <b>Sticky</b> stay at the top while scrolling,
+    and <b>Fixed</b> stay at top-right corner.
+  </div>
+
+</body>
+</html>

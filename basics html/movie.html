@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Favorite Movie</title>
+  <style>
+    body { font-family: Arial; text-align:center; }
+    .card {
+      max-width: 400px;
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 12px;
+      background: #f0f0f0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .dark { background:#2c3e50; color:white; }
+    img { width: 200px; border-radius:10px; }
+    button { margin: 10px; padding: 8px 12px; border:none; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <div class="card" id="movieCard">
+    <h2 id="title"></h2>
+    <img id="poster" src="" alt="Movie Poster">
+    <p><strong>Year:</strong> <span id="year"></span></p>
+    <p><strong>Genre:</strong> <span id="genre"></span></p>
+    <p id="description"></p>
+    <p id="review"></p>
+    <button onclick="toggleTheme()">Change Theme</button>
+    <button onclick="showReview()">Show Random Review</button>
+  </div>
+
+  <script>
+    let movie = {
+      title: "Spider-Man: No Way Home",
+      year: 2021,
+      genre: "Action, Adventure",
+      description: "Peter Parker teams up with old allies and faces new multiverse villains."
+    };
+
+    let reviews = [
+      "Best Spider-Man movie ever! 🕷️",
+      "Multiverse madness at its peak!",
+      "I laughed, I cried, I cheered!",
+      "Too many villains? Nope, just perfect!"
+    ];
+
+    document.getElementById("title").textContent = movie.title;
+    document.getElementById("year").textContent = movie.year;
+    document.getElementById("genre").textContent = movie.genre;
+    document.getElementById("description").textContent = movie.description;
+    document.getElementById("poster").src = "https://m.media-amazon.com/images/I/71niXI3lxlL._AC_SL1500_.jpg";
+
+    function toggleTheme() {
+      document.getElementById("movieCard").classList.toggle("dark");
+    }
+
+    function showReview() {
+      let randomIndex = Math.floor(Math.random() * reviews.length);
+      document.getElementById("review").textContent = reviews[randomIndex];
+    }
+  </script>
+</body>
+</html>

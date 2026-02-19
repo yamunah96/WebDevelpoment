@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Game Scoreboard</title>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: url("https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8="), url("https://static.vecteezy.com/vite/assets/photo-masthead-375-BoK_p8LG.webp");
+        background-size: contain, cover;
+        background-repeat: repeat, no-repeat;
+        background-blend-mode:lighten;
+        color: white;
+        text-align: center;
+        padding: 40px;
+      }
+      h1 {
+        color: #ffcc00;
+      }
+
+      table {
+        margin: 30px auto;
+        border-collapse: collapse;
+        width: 80%;
+        background-color: #292944;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      }
+
+      th,
+      td {
+        padding: 15px;
+        border: 1px solid #444;
+      }
+
+      th {
+        background-color: #444477;
+        color: #ffcc00;
+      }
+
+      tr:hover {
+        background-color: #3b3b5c;
+      }
+
+      td.rank {
+        font-weight: bold;
+        color: #00ff99;
+      }
+
+      td.score {
+        color: #ff6666;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🎮 Game Scoreboard</h1>
+
+    <table>
+      <tr>
+        <th>Rank</th>
+        <th>Player Name</th>
+        <th>Game</th>
+        <th>High Score</th>
+      </tr>
+      <tr>
+        <td class="rank">1</td>
+        <td>Akriti</td>
+        <td>Roblox Obby</td>
+        <td class="score" style="background-color: green">
+          <span style="color: rgb(233, 229, 229)">9500</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="rank">2</td>
+        <td>Ayan</td>
+        <td>Subway Surfers</td>
+        <td class="score">8800</td>
+      </tr>
+      <tr>
+        <td class="rank">3</td>
+        <td>Riya</td>
+        <td>Minecraft</td>
+        <td class="score">7700</td>
+      </tr>
+      <tr>
+        <td class="rank">4</td>
+        <td>Dev</td>
+        <td>Among Us</td>
+        <td class="score">6600</td>
+      </tr>
+    </table>
+  </body>
+</html>
