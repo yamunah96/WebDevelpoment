@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Student Bio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f4f8;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+    .dark-mode {
+      background: #2c3e50;
+      color: #ecf0f1;
+    }
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      transition: background 0.3s;
+    }
+    .dark-mode .container {
+      background: #34495e;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .bio {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .bio img {
+      width: 120px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 8px 12px;
+      margin: 5px;
+      border: none;
+      border-radius: 6px;
+      background: #3498db;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #2980b9;
+    }
+    .skills {
+      margin-top: 20px;
+    }
+    .skill-bar {
+      background: #ddd;
+      border-radius: 10px;
+      margin: 8px 0;
+      overflow: hidden;
+    }
+    .skill-bar span {
+      display: block;
+      height: 20px;
+      color: white;
+      text-align: center;
+      line-height: 20px;
+    }
+    .fact {
+      margin-top: 15px;
+      font-style: italic;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>My Bio</h1>
+    <div class="bio">
+      <img src="https://img.freepik.com/free-photo/anime-style-portrait-young-student-attending-school_23-2151125048.jpg" alt="Student Photo">
+      <h2 id="studentName"></h2>
+      <p id="studentGrade"></p>
+      <input type="text" id="nicknameInput" placeholder="Enter your nickname">
+      <p><strong>Nickname:</strong> <span id="studentNickname">---</span></p>
+    </div>
+
+    <p><strong>Age:</strong> <span id="studentAge"></span></p>
+    <p><strong>School:</strong> <span id="studentSchool"></span></p>
+    <p><strong>Hobby:</strong> <span id="studentHobby"></span></p>
+
+    <div class="skills">
+      <h3>My Skills</h3>
+      <div class="skill-bar"><span style="width:80%; background:#27ae60;">HTML - 80%</span></div>
+      <div class="skill-bar"><span style="width:70%; background:#2980b9;">CSS - 70%</span></div>
+      <div class="skill-bar"><span style="width:50%; background:#f39c12;">JavaScript - 50%</span></div>
+    </div>
+
+    <div class="controls" style="text-align:center; margin-top:20px;">
+      <button onclick="toggleTheme()">Toggle Dark Mode</button>
+      <button onclick="showFact()">Show Fun Fact</button>
+    </div>
+    
+    <p class="fact" id="funFact"></p>
+  </div>
+
+  <script>
+    // Student Data
+    let name = "Sara Khan";
+    let age = 13;
+    let grade = "8th Grade";
+    let school = "Green Valley School";
+    let hobby = "Reading Books";
+
+    let facts = [
+      "I can solve a Rubik's Cube in 2 minutes!",
+      "My favorite subject is Science.",
+      "I love playing badminton after school.",
+      "I want to be a software engineer."
+    ];
+
+    // Insert data into page
+    document.getElementById("studentName").textContent = name;
+    document.getElementById("studentAge").textContent = age;
+    document.getElementById("studentGrade").textContent = grade;
+    document.getElementById("studentSchool").textContent = school;
+    document.getElementById("studentHobby").textContent = hobby;
+
+    // Nickname live update
+    let nicknameInput = document.getElementById("nicknameInput");
+    let nicknameOutput = document.getElementById("studentNickname");
+    nicknameInput.addEventListener("input", function() {
+      nicknameOutput.textContent = nicknameInput.value || "---";
+    });
+
+    // Theme Toggle
+    function toggleTheme() {
+      document.body.classList.toggle("dark-mode");
+    }
+
+    // Show Random Fun Fact
+    function showFact() {
+      let randomIndex = Math.floor(Math.random() * facts.length);
+      document.getElementById("funFact").textContent = facts[randomIndex];
+    }
+    
+  </script>
+</body>
+</html>
