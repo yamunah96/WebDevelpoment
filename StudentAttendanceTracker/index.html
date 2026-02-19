@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: auto;
+        text-align: center;
+      }
+      .attendence_form {
+        background-color: aquamarine;
+        width: 75%;
+        margin: auto;
+      }
+      input {
+        margin-top: 10px;
+      }
+      .report {
+        margin-top: 10px;
+        background-color: rgb(63, 145, 51);
+        width: 75%;
+        margin: auto;
+        color: black;
+        color:rgb(99, 40, 40)
+      }
+      h3{
+        color:black;
+      }
+      table{
+        text-align: center;
+        margin-top: 10px;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Student Attendence Tracker</h1>
+
+    <div class="attendence_form">
+      <!-- Add student form -->
+      <input type="text" id="newStudent" placeholder="Enter the student name" />
+      <button onclick="addStudent()">Add Student</button>
+
+      <h3>Student List</h3>
+      <div id="studentlist">Raha</div>
+      <p id="total">Total Students</p>
+
+      <button onclick="submitAttendence()">Submit Attendance</button>
+    </div>
+
+    <div id="report" class="report">
+      <h3>Attendance Report</h3>
+    </div>
+  </body>
+
+  <script>
+    //  const(block scope), var(functional scope), let(block scope)
+    let students = ["Sara", "Amit", "riya", "mira"]; // array - symbol []
+    let attendence = {}; // {} - Json data (javascript object notation key:value
+    // console.log(attendence.Sara)
+
+    // console.log(students.length)  // check total value inside the array
+    // console.log(students.slice(0,4))  // 3 index excluded
+
+    function renderStudentlist() {
+      let container = document.getElementById("studentlist");
+      container.innerHTML = " "; // delete old students
+
+      // foreach
+      students.forEach((name, index) => {
+        // div tag for each student
+        let studentDiv = document.createElement("div");
+        studentDiv.className = "student";
+        
+
+        // student name inside the div tag
+        let span = document.createElement("span");
+        span.textContent = " " + name;
+
+        // remove button
+        let remove_button = document.createElement("button");
+        remove_button.textContent = "remove";
+        remove_button.onclick = () => removestudent();
+        //check box
+        let checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = attendence[name] || false;
+        checkbox.onchange = () => {
+          attendence[name] = checkbox.checked;
+          console.log("attendenced checked", attendence[name]);
+        };
+
+        studentDiv.appendChild(remove_button);
+        studentDiv.appendChild(span);
+        studentDiv.appendChild(checkbox);
+        container.appendChild(studentDiv);
+
+        //total student data updating
+        document.getElementById("total").textContent =
+          "Total Student : " + students.length;
+      });
+    }
+
+    function addStudent() {
+      let name = document.getElementById("newStudent").value.trim();
+      if (name) {
+        students.push(name);
+        attendence[name] = false;
+        renderStudentlist();
+      } else {
+        alert("Please enter a valid name");
+      }
+      console.log(attendence[name]);
+    }
+
+    function removestudent(index) {
+      let removed = students.splice(index, 1)[0];
+      delete attendence[removed];
+      renderStudentlist();
+      submitAttendence();
+    }
+
+    function submitAttendence() {
+      let reportDiv = document.getElementById("report");
+      reportDiv.innerHTML = "";
+
+      let table = document.createElement("table");
+      let header = "<tr> <th>Name</th>  <th>Status</th></tr>";
+      table.innerHTML = header;
+
+      let totalpresent = 0;
+      let totalabsent = 0;
+      students.forEach((value) => {
+        let status = attendence[value] ? "Present" : "Absent";
+        if (attendence[value]) totalpresent++;
+        else totalabsent++;
+
+        let row = `<tr>
+          <td> ${value}</td>
+           <td> ${status}</td>
+          </tr>`;
+        table.innerHTML += row;
+      });
+
+      reportDiv.appendChild(table);
+    }
+
+    renderStudentlist(); // callback the functions
+  </script>
+</html>
