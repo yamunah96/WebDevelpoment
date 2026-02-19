@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="maincontainer">
+
+      <div class="leftcontiner">
+        <h2>Student Form</h2>
+        <label>Student Name<input type="text" id="name" oninput="showdata()" required/></label>
+        <label>Date of Birth<input type="date" id="dob" oninput="showdata()" required/></label>
+        <label>Hobby <input type="text" id="hobby" oninput="showdata()" required/></label>
+        <label>Favorite Color
+          <select id="color" onchange="showdata()" required>
+            <option value="select">Select</option>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+            <option value="purple">Purple</option>
+          </select></label
+        >
+        <label>Favorite Food</label>
+        <label> <input value="Pizza" type="checkbox" class="inputcheckbox"  onchange="showdata()"/> Pizza </label>
+        <label> <input value="Burger" type="checkbox" class="inputcheckbox" onchange="showdata()" /> Burger </label>
+        <label> <input value="Pasta" type="checkbox" class="inputcheckbox"  onchange="showdata()"/> Pasta </label>
+        <label> <input value="Biryani" type="checkbox" class="inputcheckbox" onchange="showdata()"/> Biryani </label>
+        <label><input value="Icecream" type="checkbox" class="inputcheckbox" onchange="showdata()"/> Icecream</label>
+        <button onclick="savedata()">Submit</button>
+      </div>
+
+
+      <div class="rightcontainer">
+        <h2>Live Preview</h2>
+        <p><b>Name: <span id="showName"></span></b></p>
+        <p><b> DOB: <span id="showDob"></span></b></p>
+        <p><b> Hobby: <span id="showhobby"></span></b></p>
+        <p><b>Favorite Food: <span id="showfavfood"></span></b></p>
+        <p><b>Color: <span id="showcolor"></span></b></p>
+      
+        <!-- color perview -->
+        <div class="colorpreview" id="colorbox"></div>
+      </div>
+
+    </div>
+
+    <div class="tablecontiner">
+      <h2>Saved Student List</h2>
+      <table id="datatable">
+        <tr>
+          <th>Name</th>
+          <th>DOB</th>
+          <th>Hobby</th>
+          <th>Favorite Color</th>
+          <th>Favorite Food</th>
+        </tr>
+      </table>
+    </div>
+    
+    <script src="script.js"></script>
+  </body>
+</html>

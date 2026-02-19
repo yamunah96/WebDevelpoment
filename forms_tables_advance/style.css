@@ -1,0 +1,89 @@
+.maincontainer{
+    background-color: lightcoral;
+    width:100%;
+    margin-top: 30px;
+    display: flex;
+}
+.leftcontiner{
+    width: 50%;
+    background-color: rgb(106, 146, 179);
+    padding:5px;
+    margin: 5px;
+    border-radius: 10px;
+}
+.rightcontainer{
+    width: 50%;
+    background-color: bisque;
+    padding:5px;
+    margin: 5px;
+    border-radius: 10px;
+}
+label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+h2{
+    text-align: center;
+}
+input[type="text"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #555;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+button{
+    margin-top: 15px;
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.colorpreview{
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    margin-top: 10px;
+}
+/* Checkbox styling */
+.inputcheckbox {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    margin-left: 15px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+/* Checkbox labels */
+input[type="checkbox"] + label {
+    font-size: 16px;
+    font-weight: normal;
+    margin-right: 15px;
+}
+
+.tablecontiner{
+    background-color: cadetblue;
+    padding: 10px;
+}
+table{
+    width: 100%;
+    border: 1px solid black;
+    margin-top: 15px;
+    border-collapse: collapse;
+}
+th,td{
+      border: 1px solid black;
+      padding:5px;
+      text-align: center;
+}
