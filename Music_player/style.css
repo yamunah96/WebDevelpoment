@@ -1,0 +1,42 @@
+body {
+  background-color: #f9f9f9;
+  font-family: Comic Sans MS, sans-serif;
+}
+
+h1 {
+  color: #4a148c;
+  text-shadow: 2px 2px 4px #c084fc;
+}
+.songs{
+	  display: flex;
+     justify-content: center;
+}
+.song-box {
+  border: 2px solid #4a148c;
+  border-radius: 20px;
+  padding: 20px;
+  width: 300px;
+  margin: 20px;
+  background-color: #e1bee7;
+  box-shadow: 3px 3px 8px gray;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  background-color: #7e57c2;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #512da8;
+}

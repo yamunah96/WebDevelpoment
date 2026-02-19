@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Musical Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <center>
+    <h1>🎵 Musical Demo 🎵</h1>
+    <h3>Click Play or Pause to enjoy the music!</h3>
+    <div class="songs">
+    <!-- Song 1 -->
+    <div class="song-box">
+      <h3>Cradles Ringtone</h3>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLat8bZvhXD3ChSXyzGsFVh6qgplm1KhYPKA&s" id="img1">
+      <br>
+      <button onclick="playCradle()">Play</button>
+      <button onclick="pauseCradle()">Pause</button>
+      <audio id="audio1" src="cradles.mp3"></audio>
+    </div>
+
+    <!-- Song 2 -->
+    <div class="song-box">
+      <h3>iPhone Ringtone</h3>
+      <img src="https://cdn.pixabay.com/photo/2018/05/08/21/08/apple-3383931_960_720.png" id="img2">
+      <br>
+      <button onclick="playIphone()">Play</button>
+      <button onclick="pauseIphone()">Pause</button>
+      <audio id="audio2" src="iphone.mp3"></audio>
+    </div>
+
+    <!-- Song 3 -->
+    <div class="song-box">
+      <h3>Pikachu Ringtone</h3>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7bLU0eYkKhYm59yslx7b9oHETvDC0ZBCbNQ&s" id="img3">
+      <br>
+      <button onclick="playPikachu()">Play</button>
+      <button onclick="pausePikachu()">Pause</button>
+      <audio id="audio3" src="pikachu.mp3"></audio>
+    </div>
+  </div>
+  </center>
+
+  <script src="script.js"></script>
+</body>
+</html>
