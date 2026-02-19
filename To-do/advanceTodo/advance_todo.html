@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Todo App</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="todo-app">
+      <h1>Todo List</h1>
+      <div id="controls">
+        <input type="text" id="todo-input" placeholder="Enter a task" />
+        <select id="priority">
+          <option value="high">🔴 High</option>
+          <option value="medium">🟡 Medium</option>
+          <option value="low">🟢 Low</option>
+        </select>
+        <button id="add-btn">Add</button>
+        <select id="filter">
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="pending">Pending</option>
+        </select>
+      </div>
+      <ul id="todo-list"></ul>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
