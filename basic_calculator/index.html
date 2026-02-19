@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>🧮 My Calculator</h1>
+
+  <div class="calculator">
+    <input type="text" id="display" readonly>
+
+    <div class="buttons">
+      <button onclick="press7()">7</button>
+      <button onclick="press8()">8</button>
+      <button onclick="press9()">9</button>
+      <button onclick="pressDivide()">÷</button>
+
+      <button onclick="press4()">4</button>
+      <button onclick="press5()">5</button>
+      <button onclick="press6()">6</button>
+      <button onclick="pressMultiply()">×</button>
+
+      <button onclick="press1()">1</button>
+      <button onclick="press2()">2</button>
+      <button onclick="press3()">3</button>
+      <button onclick="pressMinus()">−</button>
+
+      <button onclick="press0()">0</button>
+      <button onclick="pressDot()">.</button>
+      <button onclick="pressEqual()">=</button>
+      <button onclick="pressPlus()">+</button>
+
+      <button class="clear" onclick="pressClear()">Clear</button>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
