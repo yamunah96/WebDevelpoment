@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Cart - MyShop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">MyShop</div>
+    <div class="search-bar"><input type="text" placeholder="Search products..."></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="clothes.html">Clothes</a>
+      <a href="electronics.html">Electronics</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="cart">🛒 <span class="cart-count" id="cartCount">0</span></div>
+  </header>
+
+  <h2 class="section-title">My Cart</h2>
+  <div class="cart-container" id="cartContainer"></div>
+
+  <div class="checkout-btn">
+  <button onclick="proceedToCheckout()">Proceed to Checkout</button>
+</div>
+
+  <script src="script.js"></script>
+  <script>
+    loadCartPage();
+  </script>
+</body>
+</html>
