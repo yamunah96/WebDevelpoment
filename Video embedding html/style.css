@@ -1,0 +1,55 @@
+body {
+  background-color: rgb(111, 157, 111);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin: 0px;
+  background-image: url('./mushroom-1097403_640.jpg');
+  background-repeat:no-repeat; /* STOP repeating */
+  background-size: cover; /* Fill the page */
+  background-attachment: fixed; /* Stay still */
+  background-position: center; /* Center the image */
+}
+h1 {
+  position: fixed; /* Stays in one place */
+  top: 0; /* Sticks to the top */
+  left: 0; /* Sticks to the left */
+  width: 100%; /* Full width */
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Light transparent background */
+  color: white;
+  padding: 20px;
+  margin: 0;
+  z-index: 999; /* Stay above videos */
+}
+.para-box {
+  width: 70%;
+  padding: 20px;
+  margin: 20px auto;
+  font-size: 30px;
+  line-height: 1.6;
+  color: white;
+}
+.vidoecircle {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* space between circles */
+}
+.video1 {
+  width: 700px;
+  border-radius: 20px;
+  display: block;
+  margin: 20px auto;
+}
+.video2,
+.video3,
+.video4,
+.video5 {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden; /* Hides the corner   */
+  object-fit: cover; /* makes the video fit into the circle */
+  margin-top: 20px;
+  margin-left: 20px;
+  border: 6px solid white; /* beautiful white border */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4); /* soft shadow */
+}
