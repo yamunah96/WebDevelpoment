@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Expense Tracker</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 6px;
+      }
+      .over-budget {
+        color: red;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Expense Tracker</h2>
+
+    <!-- Budget Input -->
+    <label>Monthly Budget: </label>
+    <input type="number" id="budgetInput" value="5000" />
+    <button onclick="setBudget()">Set Budget</button>
+    <p id="budgetStatus"></p>
+
+    <!-- Expense Form -->
+    <h3>Add Expense</h3>
+    <input type="text" id="expenseName" placeholder="Expense name" />
+    <input type="number" id="expenseAmount" placeholder="Amount" />
+    <input type="text" id="expenseCategory" placeholder="Category" />
+    <button onclick="addExpense()">Add</button>
+
+    <h3>Expenses</h3>
+    <table id="expenseTable">
+      <tr>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Category</th>
+        <th>Action</th>
+      </tr>
+    </table>
+
+    <p id="totalSpent"></p>
+    <div id="categoryReport"></div>
+
+    <script>
+      let budget = 5000;
+      let expenses = [];
+
+      function setBudget() {
+        budget = Number(document.getElementById("budgetInput").value);
+        updateBudgetStatus();
+      }
+
+      function addExpense() {
+        let name = document.getElementById("expenseName").value.trim();
+        let amount = Number(document.getElementById("expenseAmount").value);
+        let category =
+          document.getElementById("expenseCategory").value.trim() || "Other";
+
+        if (name && amount > 0) {
+          expenses.push({ name, amount, category });
+          document.getElementById("expenseName").value = "";
+          document.getElementById("expenseAmount").value = "";
+          document.getElementById("expenseCategory").value = "";
+          renderTable();
+        } else {
+          alert("Enter valid expense details!");
+        }
+      }
+
+      function removeExpense(index) {
+        expenses.splice(index, 1);
+        renderTable();
+      }
+
+      function renderTable() {
+        let table = document.getElementById("expenseTable");
+        table.innerHTML = `
+        <tr>
+          <th>Name</th>
+          <th>Amount</th>
+          <th>Category</th>
+          <th>Action</th>
+        </tr>
+      `;
+
+        let total = 0;
+        expenses.forEach((exp, i) => {
+          total += exp.amount;
+          table.innerHTML += `
+          <tr>
+            <td>${exp.name}</td>
+            <td>${exp.amount}</td>
+            <td>${exp.category}</td>
+            <td><button onclick="removeExpense(${i})">Remove</button></td>
+          </tr>
+        `;
+        });
+
+        document.getElementById(
+          "totalSpent"
+        ).textContent = `Total Spent: ₹${total}`;
+        updateBudgetStatus(total);
+        renderCategoryReport();
+      }
+
+      function updateBudgetStatus(totalSpent = 0) {
+        let status = document.getElementById("budgetStatus");
+        let remaining = budget - totalSpent;
+        if (remaining < 0) {
+          status.textContent = `Over Budget! Remaining: ₹${remaining}`;
+          status.className = "over-budget";
+        } else {
+          status.textContent = `Remaining Budget: ₹${remaining}`;
+          status.className = "";
+        }
+      }
+
+      function renderCategoryReport() {
+        let reportDiv = document.getElementById("categoryReport");
+        let categoryTotals = {};
+
+        expenses.forEach((exp) => {
+          categoryTotals[exp.category] =
+            (categoryTotals[exp.category] || 0) + exp.amount;
+        });
+
+        reportDiv.innerHTML = "<h4>Category Report</h4>";
+        for (let cat in categoryTotals) {
+          reportDiv.innerHTML += `<p>${cat}: ₹${categoryTotals[cat]}</p>`;
+        }
+      }
+    </script>
+  </body>
+</html>
