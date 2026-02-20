@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+   font-family: Arial, sans-serif;
+}
+.header {
+  display: flex;
+  position: sticky;
+  top: 0;
+  justify-content: space-between;
+  background-color: #800300;
+  align-items: center;
+  color: white;
+  z-index: 100; /* Keeps header above other content */
+}
+.header h1 {
+  font-size: 30px;
+  text-align: center;
+}
+.header a {
+  font-size: 20px;
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s; /* Smooth color change */
+}
+.header img {
+  width: 60px;
+  height: 60px;
+  border-radius: 80px;
+  margin-left: 20px; /* Better spacing */
+}
+.header nav {
+  margin-right: 20px; /* Add space on right side */
+}
+
+/*intro section*/
+.intro{
+    position: relative;
+    width: 100%;
+    height: 800px;
+    overflow: hidden;
+    background-color: #000;
+   
+}
+/* Text content fixed on top of slideshow */
+.intro h2 {
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    z-index: 10;
+    color: white;
+    font-size: 50px;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.9);
+    margin: 0;
+}
+
+.intro p {
+    position: absolute;
+    top: 270px;
+    left: 100px;
+    z-index: 10;
+    color: #ffeb3b;
+    font-size: 28px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+    margin: 0;
+}
+
+.slideshow{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.slideshow img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: slide 15s infinite ease-in-out;
+}
+/* Each image appears at different times - 3 seconds apart */
+.slideshow img:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.slideshow img:nth-child(2) {
+    animation-delay: 3s;
+}
+
+.slideshow img:nth-child(3) {
+    animation-delay: 6s;
+}
+
+.slideshow img:nth-child(4) {
+    animation-delay: 9s;
+}
+
+.slideshow img:nth-child(5) {
+    animation-delay: 12s;
+}
+/* Animation keyframes - controls fade in and fade out */
+@keyframes slide {
+    0% {opacity: 0;}
+    6% {opacity: 1; }
+    20% {opacity: 1;}
+    26% { opacity: 0;}
+    100% {opacity: 0;}
+}
